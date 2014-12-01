@@ -1,0 +1,4 @@
+node_modules
+.DS_Store*
+twitter_id_settings.bsh
+*.log

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# read from twitter setting file.
+. ./twitter_id_settings.bsh
+
+# run bot for twitter
+./bin/hubot -a twitter-userstream 
+
