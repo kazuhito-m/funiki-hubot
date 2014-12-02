@@ -1,3 +1,6 @@
+DEL tweet_cron
+SET tweet_cron '0 0 * * * *'
+
 DEL first_person
 SET first_person 'わたし'
 

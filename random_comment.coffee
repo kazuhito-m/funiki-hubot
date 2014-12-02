@@ -1,14 +1,10 @@
+# 定数
 TEMPLATE_KEY="comment_template"
-NOUNS_KEY="nouns"
 
+# インポート系
 async = require('async')
 cron = require('cron').CronJob 
 client = require('redis').createClient()
-
-# redis から取得する値一覧。
-comment_template=""
-noun=""
-first_parson=""
 
 # radisからデータ取ってくる関数群
 
@@ -63,7 +59,21 @@ randomSpeak = (func) ->
     )
 
 # ここからが本番！
+
+# メンションによる処理
 module.exports = (robot) ->
-  robot.hear /.*sey.*/i, (msg) ->
+  robot.hear /.*なんか[言い].*/i, (msg) ->
     randomSpeak (comment) ->
-      msg.send  comment
+      msg.send comment
+
+# cronスケジューリングによる自動ツイート
+client.get 'tweet_cron' , (err,cron_schedule) ->
+  console.log "tweet timing : cron settings: #{cron_schedule}"
+  module.exports = (robot) ->
+    new cron( cron_schedule  , () ->
+      console.log 'クーロン回ってます。'
+      randomSpeak (comment) ->
+        envelope = room: "#dummy"
+        robot.send envelope, comment
+    ).start()
+
