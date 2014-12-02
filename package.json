@@ -5,6 +5,7 @@
   "author": "kazuhito",
   "description": "test hubot.",
   "dependencies": {
+    "async": "^0.9.0",
     "cron": "^1.0.5",
     "hubot": "^2.9.3",
     "hubot-diagnostics": "0.0.1",

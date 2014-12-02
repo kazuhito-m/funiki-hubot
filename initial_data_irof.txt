@@ -1,0 +1,33 @@
+DEL first_person
+SET first_person 'わたし'
+
+DEL copy_target
+SET copy_target 'irof'
+
+DEL comment_template
+RPUSH comment_template '本当の#{first_person}なら、そういうことは言わないな。'
+RPUSH comment_template '本日は#{noun}関係でアレ。'
+RPUSH comment_template '#{noun}とはなんだったのか。'
+RPUSH comment_template 'Javaのことならまかせろー(バリバリ)。'
+RPUSH comment_template '#{noun}のことならまかせろー(バリバリ)。'
+
+DEL noun
+RPUSH noun 'Java'
+RPUSH noun '自動テスト'
+RPUSH noun '老害'
+RPUSH noun '足グニャ'
+RPUSH noun 'いろふ'
+RPUSH noun 'ラムダ'
+RPUSH noun 'ほげ駆動'
+RPUSH noun '関Java'
+
+DEL personal_noun
+RPUSH personal_noun 'Java'
+RPUSH personal_noun '自動テスト'
+RPUSH personal_noun '老害'
+RPUSH personal_noun '足グニャ'
+RPUSH personal_noun 'いろふ'
+RPUSH personal_noun 'ラムダ'
+RPUSH personal_noun 'ほげ駆動'
+RPUSH personal_noun '関Java'
+
