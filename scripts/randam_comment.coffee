@@ -1,5 +1,6 @@
-# cron = require('cron').CronJob 
+TEMPLATE_KEY="comment_template"
 
+cron = require('cron').CronJob 
 client = require('redis').createClient()
 
 module.exports = (robot) ->
@@ -8,7 +9,13 @@ module.exports = (robot) ->
 #     robot.send envelope, "@kazuhito_m ただいま、 #{new Date} をお知らせします。"
 #   ).start()
   robot.hear /.*sey.*/i, (msg) ->
+    # Test
     client.get "test", (err, val) ->
       msg.send val
-    client.llen "comment_template" , (err,val2) ->
-      msg.send val2
+
+    # ランダムにしゃべる
+    client.llen TEMPLATE_KEY , (err,count) ->
+      index = Math.floor(Math.random() * count)
+      client.lindex TEMPLATE_KEY , index , (err,comment) ->
+        msg.send comment
+
