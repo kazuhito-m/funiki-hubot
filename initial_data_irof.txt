@@ -1,11 +1,10 @@
-DEL tweet_cron
+SET stalking_target_twitter_id 'irof'
+SET first_person 'わたし'
 SET tweet_cron '0 0 * * * *'
 
-DEL first_person
-SET first_person 'わたし'
-
-DEL copy_target
-SET copy_target 'irof'
+SET nouns_top_x 100
+SET analyze_tweet_limit 1000
+SET crawl_cron '0 0 4 * * *'
 
 DEL comment_template
 RPUSH comment_template '本当の#{first_person}なら、そういうことは言わないな。'
@@ -33,4 +32,3 @@ RPUSH personal_noun 'いろふ'
 RPUSH personal_noun 'ラムダ'
 RPUSH personal_noun 'ほげ駆動'
 RPUSH personal_noun '関Java'
-

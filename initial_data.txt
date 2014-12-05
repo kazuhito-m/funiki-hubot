@@ -1,0 +1,22 @@
+SET stalking_target_twitter_id 'kazuhito_m'
+SET first_person '俺'
+SET tweet_cron '0 0 * * * *'
+
+SET nouns_top_x 100
+SET analyze_tweet_limit 1000
+SET crawl_cron '0 0 4 * * *'
+
+DEL comment_template
+RPUSH comment_template '#{first_person}、不器用なんで…「#{noun}」くらいしか喋れません…。'
+
+DEL noun
+RPUSH noun 'なんできたん'
+RPUSH noun 'hubot'
+RPUSH noun 'scala'
+RPUSH noun 'redis'
+
+DEL personal_noun
+RPUSH personal_noun 'なんできたん'
+RPUSH personal_noun 'ひゃっはー'
+RPUSH personal_noun 'test'
+
