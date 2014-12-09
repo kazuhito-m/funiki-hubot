@@ -32,3 +32,6 @@ RPUSH personal_noun 'いろふ'
 RPUSH personal_noun 'ラムダ'
 RPUSH personal_noun 'ほげ駆動'
 RPUSH personal_noun '関Java'
+
+DEL dog_of_pavlov
+RPUSH dog_of_pavlov 'kazuhito_m,,なんできたん？'

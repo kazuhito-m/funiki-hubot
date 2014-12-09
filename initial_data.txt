@@ -20,3 +20,5 @@ RPUSH personal_noun 'なんできたん'
 RPUSH personal_noun 'ひゃっはー'
 RPUSH personal_noun 'test'
 
+DEL dog_of_pavlov
+RPUSH dog_of_pavlov 'kazuhito_m,,なんできたん？'
