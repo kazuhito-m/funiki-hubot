@@ -1,0 +1,34 @@
+SET stalking_target_twitter_id 'syobochim'
+SET first_person 'オレ'
+SET tweet_cron '0 10,50 * * * *'
+
+SET nouns_top_x 100
+SET analyze_tweet_limit 1000
+SET crawl_cron '0 0 2 * * *'
+
+DEL comment_template
+RPUSH comment_template '#{noun}〜'
+RPUSH comment_template '#{noun}だっ！'
+RPUSH comment_template '#{noun}だぜっ！'
+RPUSH comment_template '#{noun} それですｗ'
+RPUSH comment_template 'うわあああああああ！！！！！！！！！'
+RPUSH comment_template 'おいやめろー！'
+RPUSH comment_template '#{noun}！！？？！！！？！！？？！！！？！！？？！！！'
+RPUSH comment_template '#{noun}に嫉妬！'
+RPUSH comment_template '#{noun}！！！'
+RPUSH comment_template "('ω'≡'ω'≡'ω'≡'ω')"
+RPUSH comment_template '#{noun} ちゃうで！！！'
+
+
+DEL noun
+RPUSH noun '扶養'
+
+DEL personal_noun
+RPUSH personal_noun '扶養'
+
+DEL pavlov_of_dog
+RPUSH pavlov_of_dog 'kazuhito_m,.*女子力.*,みうみううるせー！！'
+RPUSH pavlov_of_dog 'backpaper0,,うらがみさん////'
+RPUSH pavlov_of_dog ',ことりん,みうみううるせー！！'
+RPUSH pavlov_of_dog ',女子力,みうみううるせー！！'
+
