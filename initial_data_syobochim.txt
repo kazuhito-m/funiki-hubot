@@ -26,9 +26,9 @@ RPUSH noun '扶養'
 DEL personal_noun
 RPUSH personal_noun '扶養'
 
-DEL pavlov_of_dog
-RPUSH pavlov_of_dog 'kazuhito_m,.*女子力.*,みうみううるせー！！'
-RPUSH pavlov_of_dog 'backpaper0,,うらがみさん////'
-RPUSH pavlov_of_dog ',ことりん,みうみううるせー！！'
-RPUSH pavlov_of_dog ',女子力,みうみううるせー！！'
+DEL dog_of_pavlov
+RPUSH dog_of_pavlov 'kazuhito_m,.*女子力.*,みうみううるせー！！'
+RPUSH dog_of_pavlov 'backpaper0,,うらがみさん////'
+RPUSH dog_of_pavlov ',ことりん,みうみううるせー！！'
+RPUSH dog_of_pavlov ',女子力,みうみううるせー！！'
 
