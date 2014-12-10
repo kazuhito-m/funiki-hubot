@@ -18,6 +18,7 @@ RPUSH comment_template '#{noun}に嫉妬！'
 RPUSH comment_template '#{noun}！！！'
 RPUSH comment_template "('ω'≡'ω'≡'ω'≡'ω')"
 RPUSH comment_template '#{noun} ちゃうで！！！'
+RPUSH comment_template 'その話、#{noun}感ある。'
 
 
 DEL noun
