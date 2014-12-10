@@ -31,6 +31,6 @@ module.exports = (robot) ->
 
      # 指定されていた条件に、どちらかにあてはまってたら、条件反射してしまうコメントをつぶやく
      if hitId && hitRgx
-       msg.send "@#{twitterId} #{comment}"
+       msg.reply comment
        break
 
