@@ -10,7 +10,6 @@ DEL comment_template
 RPUSH comment_template '本当の#{first_person}なら、そういうことは言わないな。'
 RPUSH comment_template '本日は#{noun}関係でアレ。'
 RPUSH comment_template '#{noun}とはなんだったのか。'
-RPUSH comment_template 'Javaのことならまかせろー(バリバリ)。'
 RPUSH comment_template '#{noun}のことならまかせろー(バリバリ)。'
 
 DEL noun
@@ -35,3 +34,5 @@ RPUSH personal_noun '関Java'
 
 DEL dog_of_pavlov
 RPUSH dog_of_pavlov 'kazuhito_m,,なんできたん？'
+RPUSH dog_of_pavlov 'tmybj,,ゆかむさん、サンキューです！'
+
