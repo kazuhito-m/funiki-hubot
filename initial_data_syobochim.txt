@@ -28,6 +28,7 @@ DEL personal_noun
 RPUSH personal_noun '扶養'
 
 DEL dog_of_pavlov
+RPUSH dog_of_pavlov 'syobochim,,精進だっ！本体も精進！！'
 RPUSH dog_of_pavlov 'kazuhito_m,,みうみううるせー！！'
 RPUSH dog_of_pavlov 'backpaper0,,うらがみさん////'
 RPUSH dog_of_pavlov ',.*ことりん.*,やめろー！ことりんのことは…みうみううるせー！！'
