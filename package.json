@@ -29,6 +29,6 @@
   },
   "scripts": {
     "start": "bin/hubot -a campfire -n hubot",
-    "test": "cake test"
+    "test": "NODE_ENV=test mocha --compilers coffee:coffee-script/register --reporter spec --require coffee-script --require test/test_helper.coffee --colors"
   }
 }
