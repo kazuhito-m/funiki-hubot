@@ -8,3 +8,7 @@ describe 'じゃんけん処理のテスト', ->
     sut = new Janken()
     expect(sut.buttle()).to.equal('かち')
     done()
+  it 'グーチョキパーをランダムで出す', (done) ->
+    sut = new Janken()
+    expect(sut.hand()).to.equal(0)
+    done()
