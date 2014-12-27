@@ -9,7 +9,7 @@ funki-hubot
 
 ## Latest integration
 
-+ master : [![Build Status](https://secure.travis-ci.org/kazuhito-m/huniki-hubot.png)](http://travis-ci.org/kazuhito-m/huniki-hubot)
++ master : [![Build Status](https://secure.travis-ci.org/kazuhito-m/funiki-hubot.png)](http://travis-ci.org/kazuhito-m/funiki-hubot)
 
 ## author
 
