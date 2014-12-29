@@ -5,6 +5,14 @@ Janken = require('../../scripts/common/janken').Janken
 Sign = require('../../scripts/common/janken').Sign
 Result = require('../../scripts/common/janken').Result
 
+# ヘルパ関数「連想配列の要素内に対象の値があるか」
+isExistValue = (table, value) ->
+  hit = false
+  for key ,i of table 
+    if i == value
+      hit = true
+  hit
+
 describe 'じゃんけん処理のテスト', ->  
 
   it '単純なグーチョキパーで判定出来る', (done) ->
@@ -38,5 +46,8 @@ describe 'じゃんけん処理のテスト', ->
 
   it 'グーチョキパーをランダムで出す', (done) ->
     sut = new Janken()
-    expect(sut.hand()).to.equal(0)
+    # Signの範囲内のものを返すかテスト(ランダムの信頼性確保のため多数回回す)
+    for i in [0..1000]
+      actual = isExistValue(Sign, sut.hand())
+      expect(actual).to.true
     done()
