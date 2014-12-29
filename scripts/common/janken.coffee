@@ -1,5 +1,5 @@
 class Janken
-  buttle: ->
+  buttle: (myHand , enemyHand)->
     'かち'  
   hand: ->
     0
