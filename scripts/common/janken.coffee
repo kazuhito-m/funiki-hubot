@@ -19,14 +19,14 @@ class Janken
     Math.floor(Math.random() * 3)
 
   # 「じゃんけん」の試合メソッド
-  buttle: (myHand , enemyHand)->
+  battle: (myHand , enemyHand)->
     # 自分の手から相手の手を引き算し、絶対値で２超えてるものは「上限を超えたもの」なんで、符号裏返して１にする。
     # 数列としては、1,-1,0,1,-1... の繰り返しを作り出す。
     ((myHand - enemyHand + 4) % 3) - 1
 
   # 「じゃんけん」の試合メソッド(片方の手が自動に成るタイプ)
-  buttleAuto: (oneHand)->
-    this.buttle(oneHand, this.hand())
+  battleAuto: (oneHand)->
+    this.battle(oneHand, this.hand())
 
 # 上記のクラス、定数群を外部参照可能なようにエクスポート
 exports.Janken = Janken

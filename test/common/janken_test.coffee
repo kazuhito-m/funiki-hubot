@@ -19,28 +19,28 @@ describe 'じゃんけん処理のテスト', ->
   sut = new Janken()  # 状態を持たないので、一々作成・破棄しなくてもOK…だと思う。
 
   it '単純なグーチョキパーで判定出来る', (done) ->
-    expect(sut.buttle(Sign.ty,Sign.pa)).to.equal(Result.win)
+    expect(sut.battle(Sign.ty,Sign.pa)).to.equal(Result.win)
     done()
 
   it 'じゃんけんして自分が勝つパターン', (done) ->
     res = Result.win
-    expect(sut.buttle(Sign.gu,Sign.ty)).to.equal(res)
-    expect(sut.buttle(Sign.ty,Sign.pa)).to.equal(res)
-    expect(sut.buttle(Sign.pa,Sign.gu)).to.equal(res)
+    expect(sut.battle(Sign.gu,Sign.ty)).to.equal(res)
+    expect(sut.battle(Sign.ty,Sign.pa)).to.equal(res)
+    expect(sut.battle(Sign.pa,Sign.gu)).to.equal(res)
     done()
 
   it 'じゃんけんして自分が負けるパターン', (done) ->
     res = Result.loss
-    expect(sut.buttle(Sign.gu,Sign.pa)).to.equal(res)
-    expect(sut.buttle(Sign.ty,Sign.gu)).to.equal(res)
-    expect(sut.buttle(Sign.pa,Sign.ty)).to.equal(res)
+    expect(sut.battle(Sign.gu,Sign.pa)).to.equal(res)
+    expect(sut.battle(Sign.ty,Sign.gu)).to.equal(res)
+    expect(sut.battle(Sign.pa,Sign.ty)).to.equal(res)
     done()
 
   it 'じゃんけんしてあいこになるパターン', (done) ->
     res = Result.drow
-    expect(sut.buttle(Sign.gu,Sign.gu)).to.equal(res)
-    expect(sut.buttle(Sign.ty,Sign.ty)).to.equal(res)
-    expect(sut.buttle(Sign.pa,Sign.pa)).to.equal(res)
+    expect(sut.battle(Sign.gu,Sign.gu)).to.equal(res)
+    expect(sut.battle(Sign.ty,Sign.ty)).to.equal(res)
+    expect(sut.battle(Sign.pa,Sign.pa)).to.equal(res)
     done()
 
   it 'グーチョキパーをランダムで出す', (done) ->
@@ -53,7 +53,7 @@ describe 'じゃんけん処理のテスト', ->
   it '自分(他者？)の手が自動的に出るようなじゃんけんが可能である', (done) ->
     # 勝ち、負け、あいこの範囲内で返すかテスト(ランダムの信頼性確保のため多数回回す)
     for i in [0..1000]
-      actual = isExistValue(Result, sut.buttleAuto(Sign.gu))
+      actual = isExistValue(Result, sut.battleAuto(Sign.gu))
       expect(actual).to.true
     done()
 
