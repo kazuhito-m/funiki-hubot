@@ -24,6 +24,10 @@ class Janken
     # 数列としては、1,-1,0,1,-1... の繰り返しを作り出す。
     ((myHand - enemyHand + 4) % 3) - 1
 
+  # 「じゃんけん」の試合メソッド(片方の手が自動に成るタイプ)
+  buttleAuto: (oneHand)->
+    this.buttle(oneHand, this.hand())
+
 # 上記のクラス、定数群を外部参照可能なようにエクスポート
 exports.Janken = Janken
 exports.Sign = Sign

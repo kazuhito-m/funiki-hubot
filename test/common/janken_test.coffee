@@ -51,3 +51,13 @@ describe 'じゃんけん処理のテスト', ->
       actual = isExistValue(Sign, sut.hand())
       expect(actual).to.true
     done()
+
+  it '自分(他者？)の手が自動的に出るようなじゃんけんが可能である', (done) ->
+    sut = new Janken()
+    # 勝ち、負け、あいこの範囲内で返すかテスト(ランダムの信頼性確保のため多数回回す)
+    for i in [0..1000]
+      actual = isExistValue(Result, sut.buttleAuto(Sign.gu))
+      expect(actual).to.true
+    done()
+
+
