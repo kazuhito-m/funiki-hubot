@@ -15,13 +15,14 @@ isExistValue = (table, value) ->
 
 describe 'じゃんけん処理のテスト', ->  
 
+  # テスト対象
+  sut = new Janken()  # 状態を持たないので、一々作成・破棄しなくてもOK…だと思う。
+
   it '単純なグーチョキパーで判定出来る', (done) ->
-    sut = new Janken()
     expect(sut.buttle(Sign.ty,Sign.pa)).to.equal(Result.win)
     done()
 
   it 'じゃんけんして自分が勝つパターン', (done) ->
-    sut = new Janken()
     res = Result.win
     expect(sut.buttle(Sign.gu,Sign.ty)).to.equal(res)
     expect(sut.buttle(Sign.ty,Sign.pa)).to.equal(res)
@@ -29,7 +30,6 @@ describe 'じゃんけん処理のテスト', ->
     done()
 
   it 'じゃんけんして自分が負けるパターン', (done) ->
-    sut = new Janken()
     res = Result.loss
     expect(sut.buttle(Sign.gu,Sign.pa)).to.equal(res)
     expect(sut.buttle(Sign.ty,Sign.gu)).to.equal(res)
@@ -37,7 +37,6 @@ describe 'じゃんけん処理のテスト', ->
     done()
 
   it 'じゃんけんしてあいこになるパターン', (done) ->
-    sut = new Janken()
     res = Result.drow
     expect(sut.buttle(Sign.gu,Sign.gu)).to.equal(res)
     expect(sut.buttle(Sign.ty,Sign.ty)).to.equal(res)
@@ -45,7 +44,6 @@ describe 'じゃんけん処理のテスト', ->
     done()
 
   it 'グーチョキパーをランダムで出す', (done) ->
-    sut = new Janken()
     # Signの範囲内のものを返すかテスト(ランダムの信頼性確保のため多数回回す)
     for i in [0..1000]
       actual = isExistValue(Sign, sut.hand())
@@ -53,11 +51,9 @@ describe 'じゃんけん処理のテスト', ->
     done()
 
   it '自分(他者？)の手が自動的に出るようなじゃんけんが可能である', (done) ->
-    sut = new Janken()
     # 勝ち、負け、あいこの範囲内で返すかテスト(ランダムの信頼性確保のため多数回回す)
     for i in [0..1000]
       actual = isExistValue(Result, sut.buttleAuto(Sign.gu))
       expect(actual).to.true
     done()
-
 
