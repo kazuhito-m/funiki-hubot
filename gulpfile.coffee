@@ -2,7 +2,6 @@ gulp = require('gulp')
 mocha = require('gulp-mocha')
 gutil = require('gulp-util')
 
-# テストタスク
 gulp.task 'test', ->
   gulp.src(['srcipts/**/*.coffee', 'test/**/*.coffee'])
     .pipe mocha {reporter: 'spec'}
