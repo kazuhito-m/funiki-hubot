@@ -20,10 +20,9 @@ class Janken
 
   # 「じゃんけん」の試合メソッド
   buttle: (myHand , enemyHand)->
-    # まず、手を引き算する。
-    result = myHand - enemyHand  
-    # 絶対値で２超えてるものは生き過ぎたものなんで、符号裏返して１にする。
-    if Math.abs(result) >= 2 then (result / -2) else result
+    # 自分の手から相手の手を引き算し、絶対値で２超えてるものは「上限を超えたもの」なんで、符号裏返して１にする。
+    # 数列としては、1,-1,0,1,-1... の繰り返しを作り出す。
+    ((myHand - enemyHand + 4) % 3) - 1
 
 # 上記のクラス、定数群を外部参照可能なようにエクスポート
 exports.Janken = Janken
