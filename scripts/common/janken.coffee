@@ -1,5 +1,6 @@
 class Janken
-  buttle: ->
+  buttle: (myHand , enemyHand)->
+    console.log "test"
     'かち'  
   hand: ->
     0
