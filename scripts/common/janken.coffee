@@ -16,7 +16,7 @@ class Janken
   # 「じゃんけんの手」を取得する。
   #   3つの手をランダムに返す。
   hand: ->
-    0
+    Math.floor(Math.random() * 3)
 
   # 「じゃんけん」の試合メソッド
   buttle: (myHand , enemyHand)->
