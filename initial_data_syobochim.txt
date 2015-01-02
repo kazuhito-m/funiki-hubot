@@ -32,6 +32,6 @@ RPUSH dog_of_pavlov ',.*(omikuji|おみくじ).*,さんの今年のおみくじ�
 RPUSH dog_of_pavlov ',.*ことりん.*,やめろー！ことりんのことは…みうみううるせー！！'
 RPUSH dog_of_pavlov ',.*女子力.*,女子力？わたしそのものですよね！！'
 RPUSH dog_of_pavlov 'syobochim,,精進だっ！本体も精進！！'
-RPUSH dog_of_pavlov 'kazuhito_m,,みうみうさん////'
+RPUSH dog_of_pavlov 'kazuhito_m,,(・_・)'
 RPUSH dog_of_pavlov 'backpaper0,,うらがみさん////'
 
